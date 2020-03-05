@@ -1,11 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c5426185-b43a-4408-9769-2593ce9f24c9" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/fileTemplates/jsx component.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/Header/logo.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+    <list default="true" id="c5426185-b43a-4408-9769-2593ce9f24c9" name="Default Changelist" comment="save commit(first change in the profile)">
+      <change afterPath="$PROJECT_DIR$/src/components/Header/Header.module.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/NavBar/NavBar.module.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Profile/Profile.module.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Header.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Header/Header.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/NavBar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/NavBar/NavBar.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Profile.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Profile/Profile.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/logo.svg" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,12 +29,14 @@
         <option value="JavaScript File" />
         <option value="XSLT Stylesheet" />
         <option value="jsx component" />
+        <option value="CSS File" />
       </list>
     </option>
     <option name="SCHEME" value="Project" />
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RESET_MODE" value="HARD" />
     <option name="UPDATE_TYPE" value="MERGE" />
   </component>
   <component name="ProjectId" id="1YNxwFHkFYsaOSi5bT6CD66Ra8t" />
@@ -44,7 +52,8 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/img/Nav" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/public/img/Profile/avatar.jpg" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.standard" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -54,14 +63,18 @@
     <property name="nodejs_interpreter_path" value="$APPLICATION_CONFIG_DIR$/node/node-v12.13.1-win-x64/node" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="configurable.group.tools" />
+    <property name="two.files.diff.last.used.file" value="$PROJECT_DIR$/public/img/Profile/avatar.jpg" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\dima-\PhpstormProjects\react-app\public\img\Nav" />
-      <recent name="C:\Users\dima-\PhpstormProjects\react-app\public" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\dima-\PhpstormProjects\react-app\src\img\Nav" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\dima-\PhpstormProjects\react-app\src\components\Profile" />
+      <recent name="C:\Users\dima-\PhpstormProjects\react-app\src\components\NavBar" />
+      <recent name="C:\Users\dima-\PhpstormProjects\react-app\src\components\Header" />
+      <recent name="C:\Users\dima-\PhpstormProjects\react-app\public\img\Nav" />
+      <recent name="C:\Users\dima-\PhpstormProjects\react-app\public" />
     </key>
   </component>
   <component name="RunManager" selected="npm.npm start">
@@ -92,7 +105,8 @@
       <workItem from="1582797091128" duration="18307000" />
       <workItem from="1582893530154" duration="422000" />
       <workItem from="1582981075372" duration="2663000" />
-      <workItem from="1582985572496" duration="63000" />
+      <workItem from="1582985572496" duration="187000" />
+      <workItem from="1583414791339" duration="8167000" />
     </task>
     <task id="LOCAL-00001" summary="что-то есть">
       <created>1582983694350</created>
@@ -122,57 +136,82 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="что-то есть" />
-    <option name="LAST_COMMIT_MESSAGE" value="что-то есть" />
+    <MESSAGE value="save commit(first change in the profile)" />
+    <option name="LAST_COMMIT_MESSAGE" value="save commit(first change in the profile)" />
   </component>
   <component name="WindowStateProjectService">
     <state x="361" y="76" key="#ESLint" timestamp="1582815283674">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="361" y="76" key="#ESLint/0.0.1536.834@0.0.1536.834" timestamp="1582815283674" />
+    <state x="223" y="72" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1583417103583">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state x="223" y="72" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.834@0.0.1536.834" timestamp="1583417103583" />
     <state x="25" y="184" key="#com.intellij.ide.fileTemplates.ui.ConfigureTemplatesDialog" timestamp="1582799785524">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="25" y="184" key="#com.intellij.ide.fileTemplates.ui.ConfigureTemplatesDialog/0.0.1536.834@0.0.1536.834" timestamp="1582799785524" />
-    <state x="393" y="12" key="CommitChangelistDialog2" timestamp="1582983690124">
+    <state x="393" y="12" key="CommitChangelistDialog2" timestamp="1583427172536">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state x="393" y="12" key="CommitChangelistDialog2/0.0.1536.834@0.0.1536.834" timestamp="1582983690124" />
-    <state width="1493" height="209" key="GridCell.Tab.0.bottom" timestamp="1582983790630">
+    <state x="393" y="12" key="CommitChangelistDialog2/0.0.1536.834@0.0.1536.834" timestamp="1583427172536" />
+    <state x="99" y="86" width="1350" height="648" key="DiffContextDialog" timestamp="1583427068449">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1493" height="209" key="GridCell.Tab.0.bottom/0.0.1536.834@0.0.1536.834" timestamp="1582983790630" />
-    <state width="1493" height="209" key="GridCell.Tab.0.center" timestamp="1582983790630">
+    <state x="99" y="86" width="1350" height="648" key="DiffContextDialog/0.0.1536.834@0.0.1536.834" timestamp="1583427068449" />
+    <state x="549" y="172" key="FileChooserDialogImpl" timestamp="1583427021333">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1493" height="209" key="GridCell.Tab.0.center/0.0.1536.834@0.0.1536.834" timestamp="1582983790630" />
-    <state width="1493" height="209" key="GridCell.Tab.0.left" timestamp="1582983790630">
+    <state x="549" y="172" key="FileChooserDialogImpl/0.0.1536.834@0.0.1536.834" timestamp="1583427021333" />
+    <state width="1493" height="211" key="GridCell.Tab.0.bottom" timestamp="1583426121197">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1493" height="209" key="GridCell.Tab.0.left/0.0.1536.834@0.0.1536.834" timestamp="1582983790630" />
-    <state width="1493" height="209" key="GridCell.Tab.0.right" timestamp="1582983790630">
+    <state width="1493" height="211" key="GridCell.Tab.0.bottom/0.0.1536.834@0.0.1536.834" timestamp="1583426121197" />
+    <state width="1493" height="211" key="GridCell.Tab.0.center" timestamp="1583426121197">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1493" height="209" key="GridCell.Tab.0.right/0.0.1536.834@0.0.1536.834" timestamp="1582983790630" />
+    <state width="1493" height="211" key="GridCell.Tab.0.center/0.0.1536.834@0.0.1536.834" timestamp="1583426121197" />
+    <state width="1493" height="211" key="GridCell.Tab.0.left" timestamp="1583426121196">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state width="1493" height="211" key="GridCell.Tab.0.left/0.0.1536.834@0.0.1536.834" timestamp="1583426121196" />
+    <state width="1493" height="211" key="GridCell.Tab.0.right" timestamp="1583426121197">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state width="1493" height="211" key="GridCell.Tab.0.right/0.0.1536.834@0.0.1536.834" timestamp="1583426121197" />
+    <state x="147" y="66" key="MergeDialog" timestamp="1583427094894">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state x="147" y="66" key="MergeDialog/0.0.1536.834@0.0.1536.834" timestamp="1583427094894" />
+    <state x="481" y="133" key="MultipleFileMergeDialog" timestamp="1583427094902">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state x="481" y="133" key="MultipleFileMergeDialog/0.0.1536.834@0.0.1536.834" timestamp="1583427094901" />
+    <state x="604" y="341" key="NewPhpFileDialog" timestamp="1583417522542">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state x="604" y="341" key="NewPhpFileDialog/0.0.1536.834@0.0.1536.834" timestamp="1583417522542" />
     <state x="277" y="60" key="SettingsEditor" timestamp="1582815470085">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="277" y="60" key="SettingsEditor/0.0.1536.834@0.0.1536.834" timestamp="1582815470085" />
-    <state x="465" y="241" key="com.intellij.ide.util.TipDialog" timestamp="1582985579581">
+    <state x="465" y="241" key="com.intellij.ide.util.TipDialog" timestamp="1583416410263">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state x="465" y="241" key="com.intellij.ide.util.TipDialog/0.0.1536.834@0.0.1536.834" timestamp="1582985579581" />
-    <state x="578" y="334" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1582983643236">
+    <state x="465" y="241" key="com.intellij.ide.util.TipDialog/0.0.1536.834@0.0.1536.834" timestamp="1583416410263" />
+    <state x="578" y="334" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1583427084887">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state x="578" y="334" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1536.834@0.0.1536.834" timestamp="1582983643236" />
+    <state x="578" y="334" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1536.834@0.0.1536.834" timestamp="1583427084887" />
     <state x="470" y="83" width="542" height="819" key="dock-window-1" timestamp="1582821837762">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="470" y="83" width="542" height="819" key="dock-window-1/0.0.1536.834@0.0.1536.834" timestamp="1582821837762" />
-    <state x="431" y="155" width="672" height="678" key="search.everywhere.popup" timestamp="1582981673880">
+    <state x="431" y="155" width="672" height="678" key="search.everywhere.popup" timestamp="1583418172432">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state x="431" y="155" width="672" height="678" key="search.everywhere.popup/0.0.1536.834@0.0.1536.834" timestamp="1582981673880" />
+    <state x="431" y="155" width="672" height="678" key="search.everywhere.popup/0.0.1536.834@0.0.1536.834" timestamp="1583418172432" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand>

@@ -1,0 +1,17 @@
+.Header{
+    background-color: #6689ff;
+    height: 50px;
+}
+
+.Header__content{
+    display: flex;
+    width: 100vw;
+    height: 48px;
+    max-width: 1000px;
+    margin: 0 auto;
+
+}
+.Header__logo{
+    height: 45px;
+    margin: 1px;
+}

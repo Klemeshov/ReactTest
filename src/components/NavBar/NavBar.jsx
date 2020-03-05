@@ -1,4 +1,5 @@
 import React from 'react'
+import classes from './NavBar.module.css'
 
 const LINKS = [
     {
@@ -30,13 +31,13 @@ const LINKS = [
 
 const NavBar = () => {
     return (
-        <nav className='nav'>
+        <nav className={classes.Navigation}>
             {LINKS.map(link => {
                 const { src, name, href } = link;
                 return (
-                    <a href={href}>
-                        <div>
-                            <img src={src} alt=''/>
+                    <a href={href} className={classes.Navigation__link}>
+                        <div className={classes.Navigation__content}>
+                            <img className={classes.Navigation__img} src={src} alt=''/>
                             {name}
                         </div>
                     </a>
