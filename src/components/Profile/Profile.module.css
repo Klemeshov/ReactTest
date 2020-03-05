@@ -1,3 +1,17 @@
-.profile{
+.Profile{
     background-color: aliceblue;
+    display: grid;
+    grid-template-areas:
+            "info"
+            "posts";
+    grid-template-rows: 200px
+                        1fr;
+}
+
+.Profile__Info{
+ grid-area: info;
+}
+
+.Profile__Posts{
+    grid-area: posts;
 }

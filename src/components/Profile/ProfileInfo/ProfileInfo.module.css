@@ -1,0 +1,29 @@
+.ProfileInfo{
+    display: grid;
+    grid-template-areas:
+            "avatar info";
+    grid-template-columns: 3fr 5fr;
+ }
+
+.ProfileInfo__avatar{
+    object-fit: cover;
+    width: 100%;
+    grid-area: avatar;
+
+}
+
+.ProfileInfo__info{
+    grid-area: info;
+}
+
+.ProfileInfo__Name{
+    font-size: 30px;
+    font-weight: bold;
+    margin-left: 3vw;
+    margin-top: 0.5vw;
+}
+.ProfileInfo__aboutMe{
+    font-size: 18px;
+    margin-left: 3vw;
+    margin-top: 1vw;
+}
