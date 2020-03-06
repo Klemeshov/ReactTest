@@ -1,8 +1,8 @@
-body{
+body {
     background-color: #ebebeb;
 }
 
-h1, h2, h3, h4, h5{
+h1, h2, h3, h4, h5 {
     display: block;
     margin: 0;
 }
@@ -11,30 +11,30 @@ h1, h2, h3, h4, h5{
 /*    border: 1px black solid;*/
 /*}*/
 
-.app-wrapper{
+.app-wrapper {
     display: grid;
-    grid-template-areas:
-    "HeaderContent"
-    "MainBar";
+    grid-template-areas: "HeaderContent" "MainBar";
     grid-template-rows: 60px 1fr;
 }
-.HeaderContent{
+
+.HeaderContent {
     grid-area: HeaderContent;
 }
 
-.MainBar{
+.MainBar {
     width: 100vw;
     max-width: 1000px;
-    margin:0 auto;
+    margin: 0 auto;
     grid-area: MainBar;
     display: grid;
-    grid-template-areas: "Navigation Profile";
+    grid-template-areas: "Navigation MainContent";
     grid-template-columns: 150px 1fr;
 }
 
-.Navigation{
+.Navigation {
     grid-area: Navigation;
 }
-.Profile{
-    grid-area: Profile;
+
+.MainContent {
+    grid-area: MainContent;
 }

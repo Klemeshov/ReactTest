@@ -5,27 +5,27 @@ const LINKS = [
     {
         src: '/img/Nav/Profile.png',
         name: 'Profile',
-        href: '#'
+        href: '/profile'
     },
     {
         src: '/img/Nav/Messages.png',
         name: 'Messages',
-        href: '#'
+        href: '/messages'
     },
     {
         src: '/img/Nav/News.png',
         name: 'News',
-        href: '#'
+        href: '/news'
     },
     {
         src: '/img/Nav/Music.png',
         name: 'Music',
-        href: '#'
+        href: '/music'
     },
     {
         src: '/img/Nav/Setting.png',
         name: 'Setting',
-        href: '#'
+        href: '/setting'
     }
 ];
 

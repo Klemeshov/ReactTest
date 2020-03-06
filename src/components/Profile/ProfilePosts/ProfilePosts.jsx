@@ -2,9 +2,10 @@ import React from 'react'
 import classes from './ProfilePosts.module.css'
 
 const ProfilePosts = () => {
-    return(
+    return (
         <div className={classes.ProfilePosts}>
-
+            <textarea/>
+            <button>Add post</button>
         </div>
     )
 };
