@@ -14,8 +14,8 @@ function App() {
                 <div className="MainBar">
                     <NavBar className='Navigation'/>
                     <div className='MainContent'>
-                        <Route path = '/profile' component={Profile}/>
-                        <Route path = '/dialogs' component={Dialogs}/>
+                        <Route exact path='/profile' component={Profile}/>
+                        <Route path='/dialogs' component={Dialogs}/>
                     </div>
                 </div>
             </div>

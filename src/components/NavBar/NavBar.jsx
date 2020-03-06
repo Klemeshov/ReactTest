@@ -1,5 +1,6 @@
 import React from 'react'
 import classes from './NavBar.module.css'
+import {NavLink} from "react-router-dom";
 
 const LINKS = [
     {
@@ -35,12 +36,12 @@ const NavBar = () => {
             {LINKS.map(link => {
                 const { src, name, href } = link;
                 return (
-                    <a href={href} className={classes.Navigation__link}>
+                    <NavLink to={href} className={classes.Navigation__link} activeClassName={classes.Navigation_active_link}>
                         <div className={classes.Navigation__content}>
                             <img className={classes.Navigation__img} src={src} alt=''/>
                             {name}
                         </div>
-                    </a>
+                    </NavLink>
                 )
             })}
         </nav>
