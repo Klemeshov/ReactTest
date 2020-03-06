@@ -9,8 +9,8 @@ const LINKS = [
     },
     {
         src: '/img/Nav/Messages.png',
-        name: 'Messages',
-        href: '/messages'
+        name: 'Dialogs',
+        href: '/dialogs'
     },
     {
         src: '/img/Nav/News.png',
