@@ -6,9 +6,9 @@
  }
 
 .ProfileInfo__avatar{
-    object-fit: cover;
     width: 100%;
     grid-area: avatar;
+    margin: 10px;
 
 }
 

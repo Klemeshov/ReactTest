@@ -1,3 +1,16 @@
 .ProfilePosts {
 
 }
+
+.Post{
+    margin: 5px;
+    border: #6689ff solid 1px;
+    padding-left: 5px;
+}
+.Message{
+    font-size: 20px;
+}
+
+.LikesCount{
+ font-size: 10px;
+}

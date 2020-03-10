@@ -2,5 +2,11 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
+import store from "./redux/state";
 
-ReactDOM.render(<App />, document.getElementById('root'));
+let render = () => {
+    ReactDOM.render(<App state={store.getState()} dispatch={store.dispatch.bind(store)}/>, document.getElementById('root'));
+};
+
+render();
+store.setRender(render);

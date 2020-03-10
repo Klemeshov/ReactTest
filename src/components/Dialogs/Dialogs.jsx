@@ -1,19 +1,13 @@
 import React from 'react'
 import classes from './Dialogs.module.css'
 import {NavLink} from "react-router-dom";
-
-
-let UserData = [
-    {id: 1, name: 'Барсик'},
-    {id: 2, name: 'Шарик'},
-    {id: 3, name: '3'},
-    {id: 4, name: '4'}];
+import {ADD_MESSAGE, UPDATE_NEW_MESSAGE} from "../../redux/dialogsReducer";
 
 
 const DialogUser = (props) => {
     const path = '/dialogs/' + props.id;
     return (
-        <NavLink to={path}>
+        <NavLink to={path} activeClassName={classes.Dialogs__activeUser}>
             <div className={classes.Dialogs__user}>
                 {props.name}
             </div>
@@ -24,21 +18,46 @@ const DialogUser = (props) => {
 const Message = (props) => {
     return (
         <div className={classes.Dialogs__message}>
-            {props.data}
+            {props.message}
         </div>
     )
 };
 
 
-const Dialogs = () => {
+const Dialogs = (props) => {
+
+
+    let ref = React.createRef();
+    let SendMessage = () => {
+        props.dispatch({type:ADD_MESSAGE});
+    };
+    let ChangeCurrentMessage = () => {
+        props.dispatch({type:UPDATE_NEW_MESSAGE, text: ref.current.value})
+    };
+
     return (
         <div className={classes.Dialogs}>
             <div className={classes.Dialogs__users}>
-                <DialogUser name='Барсик' id='1'/>
+                {props.data.dialogs.map(user => {
+                    const {id, name} = user;
+                    return (
+                        <DialogUser id={id} name={name}/>
+                    )
+                })}
             </div>
             <div className={classes.Dialogs__messages}>
-                <Message data="ррррррр"/>
+                {props.data.messages.map(messageInfo =>
+                    <Message message={messageInfo.message}/>
+                )}
             </div>
+            <div className={classes.Dialogs__input}>
+                <textarea ref={ref} className={classes.textArea} onChange={ChangeCurrentMessage} value={props.data.currentMessage}/>
+                <button className={classes.Button} onClick={SendMessage}>
+                    send
+                </button>
+            </div>
+
+
         </div>
     )
 };

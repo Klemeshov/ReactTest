@@ -6,6 +6,8 @@
             "posts";
     grid-template-rows: 300px
                         1fr;
+
+    margin: 8px;
 }
 
 .Profile__Info{
