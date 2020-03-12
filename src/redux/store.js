@@ -29,7 +29,7 @@ let store = {
     _render() {
         return alert('state is change');
     },
-    setRender(newRender) {
+    subscribe(newRender) {
         this._render = newRender
     },
     dispatch(action) {
