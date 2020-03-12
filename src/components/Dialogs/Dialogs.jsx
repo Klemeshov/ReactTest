@@ -29,10 +29,10 @@ const Dialogs = (props) => {
 
     let ref = React.createRef();
     let SendMessage = () => {
-        props.dispatch({type:ADD_MESSAGE});
+        props.onSendMessage();
     };
     let ChangeCurrentMessage = () => {
-        props.dispatch({type:UPDATE_NEW_MESSAGE, text: ref.current.value})
+        props.onChangeCurrentMessage(ref.current.value);
     };
 
     return (

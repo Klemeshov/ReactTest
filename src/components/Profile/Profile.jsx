@@ -1,16 +1,13 @@
 import React from 'react'
 import classes from './Profile.module.css'
 import ProfileInfo from "./ProfileInfo/ProfileInfo";
-import ProfilePosts from "./ProfilePosts/ProfilePosts";
+import ProfilePostsContainer from "./ProfilePosts/ProfilePostsContainer";
 
 const Profile = (props) => {
     return (
         <div className={classes.Profile}>
             <ProfileInfo className={classes.Profile__Info}/>
-            <ProfilePosts className={classes.Profile__Posts}
-                          posts={props.data.posts}
-                          currentPost={props.data.currentPost}
-                          dispatch = {props.dispatch}/>
+            <ProfilePostsContainer className={classes.Profile__Posts}/>
         </div>
     );
 };
