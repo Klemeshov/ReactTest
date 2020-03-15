@@ -1,0 +1,71 @@
+.Users {
+    background-color: aliceblue;
+}
+
+.Users__text {
+    font-size: 25px;
+    font-weight: bolder;
+    margin-left: 10px;
+    margin-top: 3px;
+}
+
+.User {
+    display: grid;
+    grid-template-columns: 100px 1fr;
+}
+
+.User__button {
+    margin: 0 auto;
+}
+
+.Button {
+    border: 1px solid rgba(66, 89, 255, 0.4);
+    width: 70px;
+}
+
+.Button:hover {
+    background-color: rgba(66, 89, 255, 0.4);
+}
+
+.User__info {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+}
+
+.User__name {
+    font-weight: bold;
+}
+
+.User__status {
+    font-family: cursive;
+    width: 100%;
+}
+
+.User__location {
+    text-align: right;
+    margin: 6px;
+    width: 0;
+}
+
+.Pages {
+    margin-top: 8px;
+    margin-left: 15px;
+}
+
+.Page, .currentPage{
+    margin-right:6px;
+    font-size: 23px;
+    padding: 2px;
+}
+.Page {
+    cursor: pointer;
+}
+.Page:hover{
+    background-color: #6689ff;
+    color: white;
+}
+
+.currentPage {
+    cursor: default;
+    color: #6689ff;
+}

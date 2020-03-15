@@ -1,7 +1,6 @@
 import React from 'react'
 import classes from './Dialogs.module.css'
 import {NavLink} from "react-router-dom";
-import {ADD_MESSAGE, UPDATE_NEW_MESSAGE} from "../../redux/dialogsReducer";
 
 
 const DialogUser = (props) => {
@@ -51,7 +50,8 @@ const Dialogs = (props) => {
                 )}
             </div>
             <div className={classes.Dialogs__input}>
-                <textarea ref={ref} className={classes.textArea} onChange={ChangeCurrentMessage} value={props.data.currentMessage}/>
+                <textarea ref={ref} className={classes.textArea} onChange={ChangeCurrentMessage}
+                          value={props.data.currentMessage}/>
                 <button className={classes.Button} onClick={SendMessage}>
                     send
                 </button>

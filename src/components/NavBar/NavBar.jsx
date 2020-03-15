@@ -24,6 +24,11 @@ const LINKS = [
         href: '/music'
     },
     {
+        src:'/img/Nav/Users.png',
+        name:'All Users',
+        href:'/users'
+    },
+    {
         src: '/img/Nav/Setting.png',
         name: 'Setting',
         href: '/setting'

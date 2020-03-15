@@ -7,6 +7,7 @@
 
 .ProfileInfo__avatar{
     width: 100%;
+    overflow: auto;
     grid-area: avatar;
     margin: 10px;
 

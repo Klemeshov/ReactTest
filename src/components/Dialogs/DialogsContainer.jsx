@@ -1,4 +1,3 @@
-import React from 'react'
 import {connect} from "react-redux";
 import Dialogs from "./Dialogs";
 import {ADD_MESSAGE, UPDATE_NEW_MESSAGE} from "../../redux/dialogsReducer";
@@ -12,10 +11,10 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
     return {
         onSendMessage: () => {
-            dispatch({type:ADD_MESSAGE});
+            dispatch({type: ADD_MESSAGE});
         },
-        onChangeCurrentMessage: (text)=>{
-            dispatch({type:UPDATE_NEW_MESSAGE, text: text});
+        onChangeCurrentMessage: (text) => {
+            dispatch({type: UPDATE_NEW_MESSAGE, text: text});
         }
     }
 };

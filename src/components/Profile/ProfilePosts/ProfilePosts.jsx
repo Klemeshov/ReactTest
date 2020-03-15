@@ -1,6 +1,5 @@
 import React from 'react'
 import classes from './ProfilePosts.module.css'
-import {ADD_POST, UPDATE_NEW_POST} from "../../../redux/profileReducer";
 
 const Post = (props) => {
     return (
