@@ -1,35 +1,41 @@
 import React from 'react'
 import classes from './NavBar.module.css'
-import {NavLink} from "react-router-dom";
+import {NavLink} from "react-router-dom"
+import profileLogo from '../../assets/img/Nav/Profile.png'
+import messagesLogo from '../../assets/img/Nav/Messages.png'
+import newsLogo from '../../assets/img/Nav/News.png'
+import musicLogo from '../../assets/img/Nav/Music.png'
+import usersLogo from '../../assets/img/Nav/Users.png'
+import settingLogo from '../../assets/img/Nav/Setting.png'
 
 const LINKS = [
     {
-        src: '/img/Nav/Profile.png',
+        src: profileLogo,
         name: 'Profile',
         href: '/profile'
     },
     {
-        src: '/img/Nav/Messages.png',
+        src: messagesLogo,
         name: 'Dialogs',
         href: '/dialogs'
     },
     {
-        src: '/img/Nav/News.png',
+        src: newsLogo,
         name: 'News',
         href: '/news'
     },
     {
-        src: '/img/Nav/Music.png',
+        src: musicLogo,
         name: 'Music',
         href: '/music'
     },
     {
-        src:'/img/Nav/Users.png',
-        name:'All Users',
-        href:'/users'
+        src: usersLogo,
+        name: 'All Users',
+        href: '/users'
     },
     {
-        src: '/img/Nav/Setting.png',
+        src: settingLogo,
         name: 'Setting',
         href: '/setting'
     }
@@ -39,9 +45,10 @@ const NavBar = () => {
     return (
         <nav className={classes.Navigation}>
             {LINKS.map(link => {
-                const { src, name, href } = link;
+                const {src, name, href} = link;
                 return (
-                    <NavLink to={href} className={classes.Navigation__link} activeClassName={classes.Navigation_active_link}>
+                    <NavLink to={href} className={classes.Navigation__link}
+                             activeClassName={classes.Navigation_active_link}>
                         <div className={classes.Navigation__content}>
                             <img className={classes.Navigation__img} src={src} alt=''/>
                             {name}

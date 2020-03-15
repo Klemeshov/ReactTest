@@ -14,7 +14,7 @@ class UsersContainer extends React.Component {
         })
     }
 
-    changePage = (page)=> {
+    changePage = (page) => {
         this.props.setCurrentPage(page);
         axios.get(`http://localhost:5000/users?page=${page}&count=${this.props.pageSize}`).then(response => {
             this.props.setTotalUsersCount(response.data.totalCount);
@@ -24,14 +24,16 @@ class UsersContainer extends React.Component {
 
     render() {
         return (
-            <Users
-                totalUsersCount={this.props.totalUsersCount}
-                pageSize={this.props.pageSize}
-                users={this.props.users}
-                onFollow={this.props.onFollow}
-                onUnfollow={this.props.onUnfollow}
-                currentPage={this.props.currentPage}
-                changePage={this.changePage}/>
+            <>
+                <Users
+                    totalUsersCount={this.props.totalUsersCount}
+                    pageSize={this.props.pageSize}
+                    users={this.props.users}
+                    onFollow={this.props.onFollow}
+                    onUnfollow={this.props.onUnfollow}
+                    currentPage={this.props.currentPage}
+                    changePage={this.changePage}/>
+            </>
         )
     }
 }
@@ -41,7 +43,8 @@ let mapStateToProps = (state) => (
         users: state.UsersPage.users,
         pageSize: state.UsersPage.pageSize,
         totalUsersCount: state.UsersPage.totalUsersCount,
-        currentPage: state.UsersPage.currentPage
+        currentPage: state.UsersPage.currentPage,
+        isFetching: state.UsersPage.isFetching
     }
 );
 
