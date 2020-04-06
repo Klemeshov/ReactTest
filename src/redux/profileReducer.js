@@ -1,12 +1,11 @@
-export const ADD_POST = 'ADD_POST';
-export const UPDATE_NEW_POST = 'UPDATE_NEW_POST';
+const ADD_POST = 'ADD_POST';
+const UPDATE_CURRENT_POST = 'UPDATE_CURRENT_POST';
+const SET_PROFILE_INFO = 'SET_PROFILE_INFO';
+const SET_FETCHING = 'SET_FETCHING';
 
 let initialState = {
-    posts: [
-        {id: 1, message: 'hi', likesCount: 12},
-        {id: 2, message: 'hello', likesCount: 10},
-        {id: 3, message: 'meow', likesCount: 20}
-    ],
+    profileInfo: null,
+    posts: [],
     currentPost: ""
 };
 
@@ -19,13 +18,22 @@ const profileReducer = (state = initialState, action) => {
                 posts: [newPost, ...state.posts],
                 currentPost: ''
             };
-        case UPDATE_NEW_POST:
+        case UPDATE_CURRENT_POST:
             return {
                 ...state,
-                currentPost: action.text
+                currentPost: action.currentPost
+            };
+        case SET_PROFILE_INFO:
+            return {
+                ...state,
+                profileInfo: action.profileInfo
             };
         default:
             return state;
     }
 };
 export default profileReducer;
+
+export const addPost = () => ({type:ADD_POST});
+export const updateNewPost = (currentPost) => ({type: UPDATE_CURRENT_POST, currentPost});
+export const setProfileInfo = (profileInfo) => ({type: SET_PROFILE_INFO, profileInfo});

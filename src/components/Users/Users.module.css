@@ -34,6 +34,10 @@
 
 .User__name {
     font-weight: bold;
+    color: black;
+}
+.User__name:hover{
+    color: #6689ff;
 }
 
 .User__status {

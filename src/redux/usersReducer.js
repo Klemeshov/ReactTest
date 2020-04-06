@@ -1,9 +1,9 @@
-export const FOLLOW = 'FOLLOW';
-export const UNFOLLOW = 'UNFOLLOW';
-export const SET_USERS = 'SET_USERS';
-export const SET_CURRENT_PAGE = 'SET_CURRENT_PAGE';
-export const SET_TOTAL_USERS_COUNT = 'SET_TOTAL_USERS_COUNT';
-export const SET_FETCHING = 'SET_FETCHING';
+const FOLLOW = 'FOLLOW';
+const UNFOLLOW = 'UNFOLLOW';
+const SET_USERS = 'SET_USERS';
+const SET_CURRENT_PAGE = 'SET_CURRENT_PAGE';
+const SET_TOTAL_USERS_COUNT = 'SET_TOTAL_USERS_COUNT';
+const SET_FETCHING = 'SET_FETCHING';
 
 let initialState = {
     users: [],
@@ -58,3 +58,13 @@ const usersReducer = (state = initialState, action) => {
     }
 };
 export default usersReducer;
+
+export const onFollow = (id) => ({type: FOLLOW, id});
+export const onUnfollow = (id) => ({type: UNFOLLOW, id});
+export const setUsers = (users) => ({type: SET_USERS, users});
+export const setCurrentPage = (page) => ({type: SET_CURRENT_PAGE, page});
+export const setTotalUsersCount = (totalUsersCount) => ({
+    type: SET_TOTAL_USERS_COUNT,
+    totalUsersCount
+});
+export const setFetching = (fetching) => ({type: SET_FETCHING, fetching});

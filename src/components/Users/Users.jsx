@@ -1,5 +1,6 @@
 import React from 'react'
 import classes from './Users.module.css'
+import {NavLink} from "react-router-dom";
 
 let User = (props) => {
     return (
@@ -15,7 +16,9 @@ let User = (props) => {
             </div>
             <div className={classes.User__info}>
                 <div>
-                    <div className={classes.User__name}>{props.user.fullName}</div>
+                    <NavLink to={'/profile/'+props.user.id}>
+                        <div className={classes.User__name}>{props.user.fullName}</div>
+                    </NavLink>
                     <div className={classes.User__status}>{props.user.status}</div>
                 </div>
                 <div className={classes.User__location}>
@@ -27,7 +30,7 @@ let User = (props) => {
     )
 };
 
-let Users = (props)=>{
+let Users = (props) => {
     let pageCount = Math.ceil(props.totalUsersCount / props.pageSize);
     let pages = [];
     for (let i = 0; i < pageCount; i++) {
@@ -45,14 +48,15 @@ let Users = (props)=>{
                     <span className={page === props.currentPage
                         ? classes.currentPage
                         : classes.Page}
-                          onClick={()=>{props.changePage(page)}}>
+                          onClick={() => {
+                              props.changePage(page)
+                          }}>
                         {page + Number(1)}
-                        </span>))}
+                    </span>))}
             </div>
         </div>
     );
 };
-
 
 
 export default Users;

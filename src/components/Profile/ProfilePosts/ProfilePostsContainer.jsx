@@ -1,6 +1,6 @@
 import {connect} from "react-redux";
 import ProfilePosts from "./ProfilePosts";
-import {ADD_POST, UPDATE_NEW_POST} from "../../../redux/profileReducer";
+import {addPost, updateNewPost} from "../../../redux/profileReducer";
 
 
 let mapStateToProps = (state) => {
@@ -9,17 +9,11 @@ let mapStateToProps = (state) => {
     }
 };
 
-let mapDispatchToProps = (dispatch) => {
-    return {
-        onChangePost: (text) => {
-            return dispatch({type: UPDATE_NEW_POST, text: text});
-        },
-        onAddPost: () => {
-            return dispatch({type: ADD_POST});
-        }
-    }
-};
 
-const ProfilePostsContainer = connect(mapStateToProps, mapDispatchToProps)(ProfilePosts);
+const ProfilePostsContainer = connect(mapStateToProps,
+    {
+        onChangePost: updateNewPost,
+        onAddPost: addPost
+    })(ProfilePosts);
 
 export default ProfilePostsContainer

@@ -6,10 +6,11 @@ import ProfilePostsContainer from "./ProfilePosts/ProfilePostsContainer";
 const Profile = (props) => {
     return (
         <div className={classes.Profile}>
-            <ProfileInfo className={classes.Profile__Info}/>
+            <ProfileInfo className={classes.Profile__Info} profileInfo = {props.profileInfo}/>
             <ProfilePostsContainer className={classes.Profile__Posts}/>
         </div>
     );
 };
+
 
 export default Profile;
