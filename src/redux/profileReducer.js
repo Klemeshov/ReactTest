@@ -1,7 +1,6 @@
 const ADD_POST = 'ADD_POST';
 const UPDATE_CURRENT_POST = 'UPDATE_CURRENT_POST';
 const SET_PROFILE_INFO = 'SET_PROFILE_INFO';
-const SET_FETCHING = 'SET_FETCHING';
 
 let initialState = {
     profileInfo: null,
@@ -12,12 +11,18 @@ let initialState = {
 const profileReducer = (state = initialState, action) => {
     switch (action.type) {
         case ADD_POST:
-            let newPost = {id: 5, message: state.currentPost, likesCount: 0};
-            return {
-                ...state,
-                posts: [newPost, ...state.posts],
-                currentPost: ''
-            };
+            if (state.currentPost !== "") {
+                let newPost = {id: 5, message: state.currentPost, likesCount: 0};
+                return {
+                    ...state,
+                    posts: [newPost, ...state.posts],
+                    currentPost: ''
+                };
+            }
+            else{
+                alert("Введите текст");
+                return state;
+            }
         case UPDATE_CURRENT_POST:
             return {
                 ...state,

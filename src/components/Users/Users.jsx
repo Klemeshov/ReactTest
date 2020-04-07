@@ -16,7 +16,7 @@ let User = (props) => {
             </div>
             <div className={classes.User__info}>
                 <div>
-                    <NavLink to={'/profile/'+props.user.id}>
+                    <NavLink to={'/profile/' + props.user.id}>
                         <div className={classes.User__name}>{props.user.fullName}</div>
                     </NavLink>
                     <div className={classes.User__status}>{props.user.status}</div>
@@ -40,12 +40,12 @@ let Users = (props) => {
         <div className={classes.Users}>
             <div className={classes.Users__text}>Users:</div>
             {props.users.map(u => {
-                return <User user={u} onFollow={props.onFollow}
+                return <User key={u.id} user={u} onFollow={props.onFollow}
                              onUnfollow={props.onUnfollow}/>
             })}
             <div className={classes.Pages}>
                 {pages.map(page => (
-                    <span className={page === props.currentPage
+                    <span key = {page+Number(1)} className={page === props.currentPage
                         ? classes.currentPage
                         : classes.Page}
                           onClick={() => {

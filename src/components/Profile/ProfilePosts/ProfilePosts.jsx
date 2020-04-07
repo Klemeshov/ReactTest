@@ -27,10 +27,10 @@ const ProfilePosts = (props) => {
 
     return (
         <div className={classes.ProfilePosts}>
-            <textarea ref={newPostElement} value={props.data.currentPost} onChange={onChangePost}/>
+            <textarea ref={newPostElement} value={props.currentPost} onChange={onChangePost}/>
             <button onClick={addPost}>Add post</button>
-            {props.data.posts.map(item =>
-                <Post message={item.message} likesCount={item.likesCount}/>
+            {props.posts.map(item =>
+                <Post message={item.message} likesCount={item.likesCount} key={item.id}/>
             )}
         </div>
     )

@@ -1,7 +1,6 @@
 import {connect} from "react-redux";
 import Users from "./Users";
 import React from "react";
-import * as axios from "axios";
 import Preloader from "../common/Preloader/Preloader";
 import {
     onFollow,
@@ -11,15 +10,16 @@ import {
     setTotalUsersCount,
     setUsers
 } from "../../redux/usersReducer";
+import {getUsers} from "../../api/api";
 
 
 class UsersContainer extends React.Component {
 
     componentDidMount() {
         this.props.setFetching(true);
-        axios.get(`http://localhost:5000/users?page=${this.props.currentPage}&count=${this.props.pageSize}`).then(response => {
-            this.props.setTotalUsersCount(response.data.totalCount);
-            this.props.setUsers(response.data.users);
+        getUsers(this.props.currentPage, this.props.pageSize).then(data => {
+            this.props.setTotalUsersCount(data.totalUsersCount);
+            this.props.setUsers(data.users);
             this.props.setFetching(false);
         })
     }
@@ -27,9 +27,9 @@ class UsersContainer extends React.Component {
     changePage = (page) => {
         this.props.setCurrentPage(page);
         this.props.setFetching(true);
-        axios.get(`http://localhost:5000/users?page=${page}&count=${this.props.pageSize}`).then(response => {
-            this.props.setTotalUsersCount(response.data.totalCount);
-            this.props.setUsers(response.data.users);
+        getUsers(page, this.props.pageSize).then(data => {
+            this.props.setTotalUsersCount(data.totalUsersCount);
+            this.props.setUsers(data.users);
             this.props.setFetching(false);
         })
     };
@@ -63,30 +63,7 @@ let mapStateToProps = (state) => (
         isFetching: state.UsersPage.isFetching
     }
 );
-/*
-let mapDispatchToProps = (dispatch) => (
-    {
-        onFollow: (id) => {
-            dispatch(onFollow(id))
-        },
-        onUnfollow: (id) => {
-            dispatch(onUnfollow(id))
-        },
-        setUsers: (users) => {
-            dispatch(setUsers(users))
-        },
-        setCurrentPage: (page) => {
-            dispatch(setCurrentPage(page))
-        },
-        setTotalUsersCount: (totalUsersCount) => {
-            dispatch(setTotalUsersCount(totalUsersCount))
-        },
-        setFetching: (fetching) => {
-            dispatch(setFetching(fetching))
-        }
-    }
-);
-*/
+
 export default connect(mapStateToProps,
     {onFollow, onUnfollow, setUsers, setCurrentPage, setTotalUsersCount, setFetching}
 )(UsersContainer);

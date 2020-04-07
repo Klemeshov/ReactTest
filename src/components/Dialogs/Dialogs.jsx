@@ -40,13 +40,13 @@ const Dialogs = (props) => {
                 {props.data.dialogs.map(user => {
                     const {id, name} = user;
                     return (
-                        <DialogUser id={id} name={name}/>
+                        <DialogUser id={id} name={name} key = {id}/>
                     )
                 })}
             </div>
             <div className={classes.Dialogs__messages}>
                 {props.data.messages.map(messageInfo =>
-                    <Message message={messageInfo.message}/>
+                    <Message message={messageInfo.message} key = {messageInfo.id}/>
                 )}
             </div>
             <div className={classes.Dialogs__input}>

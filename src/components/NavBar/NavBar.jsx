@@ -48,7 +48,8 @@ const NavBar = () => {
                 const {src, name, href} = link;
                 return (
                     <NavLink to={href} className={classes.Navigation__link}
-                             activeClassName={classes.Navigation_active_link}>
+                             activeClassName={classes.Navigation_active_link}
+                             key = {link.name}>
                         <div className={classes.Navigation__content}>
                             <img className={classes.Navigation__img} src={src} alt=''/>
                             {name}
