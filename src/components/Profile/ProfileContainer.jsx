@@ -1,32 +1,27 @@
 import React from "react";
 import Profile from "./Profile";
 import {connect} from "react-redux";
-import {setProfileInfo} from "../../redux/profileReducer";
+import {getProfile, setProfileInfo} from "../../redux/profileReducer";
 import Preloader from "../common/Preloader/Preloader";
 import {withRouter} from "react-router-dom";
-import {getProfile} from "../../api/api";
+import withAuthRedirect from "../../hoc/withAuthRedirect";
+import {compose} from "redux";
 
 class ProfileContainer extends React.Component {
     componentDidMount() {
-        let id = this.props.match.params.id;
-        if (!id) {
-            id = ""
-        }
-        getProfile(id).then(data => {
-            this.props.setProfileInfo(data);
-        })
+        let id = Number(this.props.match.params.id);
+        this.props.getProfile(id);
     }
 
     componentDidUpdate(prevProps, prevState, snapshot) {
         if (prevProps.profileInfo) {
-            let id = this.props.match.params.id;
+            let id = Number(this.props.match.params.id);
             if (!id) {
                 id = this.props.id;
             }
+
             if (prevProps.profileInfo.id !== id) {
-                getProfile(id).then(data => {
-                    this.props.setProfileInfo(data);
-                })
+                this.props.getProfile(id);
             }
         }
     }
@@ -44,8 +39,12 @@ class ProfileContainer extends React.Component {
 const mapStateToProps = (state) => (
     {
         profileInfo: state.ProfilePage.profileInfo,
-        id: state.auth.id
+        id: state.auth.id,
     }
 );
 
-export default connect(mapStateToProps, {setProfileInfo})(withRouter(ProfileContainer));
+export default compose(
+    connect(mapStateToProps, {setProfileInfo, getProfile}),
+    withRouter
+   // withAuthRedirect
+)(ProfileContainer)

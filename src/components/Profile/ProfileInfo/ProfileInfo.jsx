@@ -1,6 +1,7 @@
 import React from 'react'
 import classes from './ProfileInfo.module.css'
 import avatar from './../../../assets/img/Profile/avatar.jpg'
+import ProfileStatus from './ProfileStatus'
 
 const ProfileInfo = (props) => {
     return(
@@ -13,7 +14,7 @@ const ProfileInfo = (props) => {
                     {props.profileInfo.fullName}
                 </div>
                 <div className={classes.ProfileInfo__aboutMe}>
-                    Статус: {props.profileInfo.status}<br/>
+                    <ProfileStatus status = {props.profileInfo.status}/>
                     {props.profileInfo.location.country}<br/>
                     {props.profileInfo.location.city}<br/>
                 </div>

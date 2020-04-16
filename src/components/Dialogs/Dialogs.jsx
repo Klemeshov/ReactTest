@@ -56,8 +56,6 @@ const Dialogs = (props) => {
                     send
                 </button>
             </div>
-
-
         </div>
     )
 };
