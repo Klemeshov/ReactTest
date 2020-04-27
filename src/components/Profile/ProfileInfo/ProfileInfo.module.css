@@ -28,3 +28,14 @@
     margin-left: 3vw;
     margin-top: 1vw;
 }
+.Status{
+    display: inline-block;
+    cursor: pointer;
+}
+.Status:hover{
+    background-color: #6689ff;
+    color: white;
+}
+.Status:active{
+    background-color: gray;
+}

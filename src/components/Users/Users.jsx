@@ -16,7 +16,7 @@ let User = (props) => {
             </div>
             <div className={classes.User__info}>
                 <div>
-                    <NavLink to={'/profile/' + props.user.id}>
+                    <NavLink to={'/profile/' + props.user._id}>
                         <div className={classes.User__name}>{props.user.fullName}</div>
                     </NavLink>
                     <div className={classes.User__status}>{props.user.status}</div>

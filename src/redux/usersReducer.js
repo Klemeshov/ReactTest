@@ -71,11 +71,13 @@ export const setTotalUsersCount = (totalUsersCount) => ({
 });
 export const setFetching = (fetching) => ({type: SET_FETCHING, fetching});
 
-export const getUsers = (currentPage, pageSize) => (dispatch) => {
+export const getUsers = (currentPage, pageSize) => async (dispatch) => {
     dispatch(setFetching(true));
-    usersAPI.getUsers(currentPage, pageSize).then(data => {
-        dispatch(setTotalUsersCount(data.totalUsersCount));
-        dispatch(setUsers(data.users));
-        dispatch(setFetching(false));
-    })
+
+    let data = await usersAPI.getUsers(currentPage, pageSize);
+
+    dispatch(setTotalUsersCount(data.totalUsersCount));
+    dispatch(setUsers(data.users));
+    dispatch(setFetching(false));
+
 };
