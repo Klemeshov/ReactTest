@@ -49,6 +49,8 @@ export const setProfileInfo = (profileInfo) => ({type: SET_PROFILE_INFO, profile
 export const deletePost = (id) => ({type: DELETE_POST, id});
 
 export const getProfile = (id) => async (dispatch) => {
+    dispatch(setProfileInfo(null));
+
     let data = await profileAPI.getProfile(id);
 
     dispatch(setProfileInfo(data));

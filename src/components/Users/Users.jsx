@@ -40,7 +40,7 @@ let Users = (props) => {
         <div className={classes.Users}>
             <div className={classes.Users__text}>Users:</div>
             {props.users.map(u => {
-                return <User key={u.id} user={u} onFollow={props.onFollow}
+                return <User key={u._id} user={u} onFollow={props.onFollow}
                              onUnfollow={props.onUnfollow}/>
             })}
             <div className={classes.Pages}>
