@@ -1,7 +1,7 @@
 import * as axios from "axios";
 
 const instance = axios.create({
-    baseURL: 'https://192.168.0.105:5000',
+    baseURL: 'https://web-server-for-react-app.herokuapp.com',
     withCredentials: true
 });
 
