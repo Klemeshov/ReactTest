@@ -16,12 +16,14 @@ export const TextArea = ({input, meta, ...props}) => {
 };
 export const Input = ({input, meta, ...props}) => {
     const isError = meta.touched && meta.error;
+    debugger;
     return (
         <div>
             <div>
-                <input className={isError?classes.errorForm:""} {...input} {...props}/>
+                <input{...input} {...props}
+                      className={props.className + ' ' + (isError?classes.errorForm:"")}/>
             </div>
-            {isError ? <span className={classes.error}>
+            {isError ? <span className={classes.error + ' ' + props.ErrorClassName}>
                 {meta.error}
             </span> : <></>}
         </div>

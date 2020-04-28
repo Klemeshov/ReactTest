@@ -1,0 +1,61 @@
+.LoginPage {
+    background-color: aliceblue;
+}
+
+.LoginPage__text {
+    color: #6689ff;
+    margin-bottom: 20px;
+    margin-left: 10vw;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.LoginPage__form {
+    max-width: 50vw;
+    width: 300px;
+    margin: 0 auto;
+}
+
+.LoginPage__input {
+    max-width: 25vw;
+    width: 250px;
+    height: 21px;
+    margin: 8px 2vw;
+    padding-left: 2px;
+    border-radius: 8px;
+}
+
+.LoginPage__input:hover {
+    border: 2px solid rgba(102, 137, 255, 0.61);
+}
+
+.LoginPage__input:focus {
+    border: 2px solid rgba(102, 137, 255, 0.61);
+    outline: none;
+}
+
+.LoginPage__input_error {
+    margin: 1px 3vw;
+}
+
+.LoginPage__checkbox{
+    width: 250px;
+    padding-left: 5px;
+    margin: 0 auto;
+}
+
+.LoginPage__button{
+    max-width: 12vw;
+    width: 200px;
+    margin: 8px 4vw;
+    color: black;
+    border-radius: 12px;
+    background-color: #ebebeb;
+}
+.LoginPage__button:hover{
+    background-color: #6689ff;
+    color: white;
+}
+.LoginPage__button:focus{
+    outline: none;
+}

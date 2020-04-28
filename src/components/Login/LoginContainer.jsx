@@ -4,7 +4,6 @@ import Login from "./Login";
 
 const mapStateToProps = (state) => (
     {
-        message: state.auth.message,
         isAuth: state.auth.isAuth
     }
 );
